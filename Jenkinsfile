@@ -12,5 +12,11 @@ pipeline {
                 echo 'Build successful'
             }
         }
+        stage('Deployment') {
+            steps {
+                npm start
+                echo 'Deployment successful'
+            }
+        }
     }
 }
