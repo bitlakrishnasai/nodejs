@@ -14,8 +14,9 @@ pipeline {
         }
         stage('Deployment') {
             steps {
+                - script: ls
                 echo 'Deployment ssuccessful'
-                                
+
             }
         }
     }
