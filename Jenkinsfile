@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh 'cd /var/lib/jenkins/workspace/krishna sai'
+                
                 sh 'npm start'
                 echo 'Deployment ssuccessful'
 
