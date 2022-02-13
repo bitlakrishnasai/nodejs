@@ -15,7 +15,6 @@ pipeline {
         stage('Deployment') {
             steps {
                 ls -a
-                npm start
                 echo 'Deployment successful'
             }
         }
