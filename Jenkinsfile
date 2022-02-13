@@ -14,8 +14,9 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                ls -a
                 echo 'Deployment successful'
+                ls 
+                
             }
         }
     }
