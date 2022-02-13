@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh 'ls'
+                sh 'pwd'
                 echo 'Deployment ssuccessful'
 
             }
