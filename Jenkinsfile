@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                bash '''npm start &'''
+                sh 'npm start &'
                 echo 'Deployment ssuccessful'
             }
         }
