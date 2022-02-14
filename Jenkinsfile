@@ -17,6 +17,7 @@ pipeline {
                 sh 'export BUILD_ID=dontKillMePlease'
                 sh 'pm2 start index.js'
                 echo 'Deployment ssuccessful'
+                sh 'export BUILD_ID=dontKillMePlease'
             }
         }
         
