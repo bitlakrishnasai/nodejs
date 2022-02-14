@@ -14,7 +14,8 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh 'pm2 restart index.js'
+                sh 'export BUILD_ID=dontKillMePlease'
+                sh 'pm2 start index.js'
                 echo 'Deployment ssuccessful'
             }
         }
