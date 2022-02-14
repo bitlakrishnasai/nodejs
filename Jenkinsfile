@@ -17,14 +17,7 @@ pipeline {
                 
                 sh 'pm2 start index.js'
                 echo 'Deployment ssuccessful'
-                export BUILD_ID=dontKillMePlease
-            }
-        }
-        
-        stage('Deployment test') {
-            steps {
-                sh 'pm2 list'
-                echo 'Deployment test ssuccessful'
+                
             }
         }
     }
