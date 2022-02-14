@@ -18,5 +18,12 @@ pipeline {
                 echo 'Deployment ssuccessful'
             }
         }
+        
+        stage('Deployment test') {
+            steps {
+                sh 'pm2 list'
+                echo 'Deployment test ssuccessful'
+            }
+        }
     }
 }
