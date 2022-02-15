@@ -24,12 +24,11 @@ pipeline {
                 if (( "$index"=="index"))
                 then
                     echo "1"
-                    if (($status=="online"))
-                    then
+                    if (($status=="online"));then
                         echo "2"
                         pm2 restart index
-                        if(($status= "stopped"))
-                        then
+                        if(($status= "stopped"));then
+                        
                             echo "3"
                             pm2 restart index
                         fi
@@ -48,9 +47,7 @@ pipeline {
     }
     post{
         success {
-            sh 'pwd'
             sh 'pm2 restart index.js'
-            sh 'pm2 list'
         }
     }    
     
