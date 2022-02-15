@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh '''
                 #!/bin/bash
-                if ((pm2 restart index.js=="true"))
+                if (((pm2 restart index.js)=="true"))
                 then
                 echo 'done'
                 else
