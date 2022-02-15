@@ -15,7 +15,7 @@ pipeline {
         stage('Deployment test') {
             steps {
                 sh '''
-                #!/bin/bash
+                #!/bin/sh
                 
                 index=$(pm2 list | grep index | awk '{print $4}')
                 status=$(pm2 list | grep index | awk '{print $18}')
@@ -26,7 +26,7 @@ pipeline {
                 echo $index
                 echo $status
 
-                if [[ "$index" == "$check1" ]]; then
+                if [ "$index" == "$check1" ]; then
                     echo "1"
 
                     if [[ "$status" == "online" ]]; then
