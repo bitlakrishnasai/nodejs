@@ -14,11 +14,13 @@ pipeline {
         }
         stage('Deployment test') {
             steps {
-                sh '!#/bin/bash
+                sh '''
+                !#/bin/bash
                 if (pm2 start index.js) 
                 fi
                 else 
-                    pm2 restart index.js'
+                    pm2 restart index.js
+                '''
                 echo 'Deployment test successful'
             }
         }
