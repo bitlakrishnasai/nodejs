@@ -16,7 +16,9 @@ pipeline {
             steps {
                 sh '''
                 !#/bin/bash
-                if ((pm2 restart index.js=="true")) 
+                if ((pm2 restart index.js=="true"))
+                echo 'done'
+                ''' 
                 echo 'Deployment test successful'
             }
         }
