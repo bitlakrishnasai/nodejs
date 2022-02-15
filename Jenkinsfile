@@ -19,7 +19,6 @@ pipeline {
                 if ((pm2 restart index.js=="true"))
                 then
                 echo 'done'
-                fi
                 else
                 pm2 start index.js
                 fi
