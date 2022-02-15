@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Build successful'
+                echo 'Test successful'
             }
         }
         stage('Deployment') {
             steps {
-                sh '/var/lib/jenkins'
+                sh 'cd /var/lib/jenkins'
                 sh 'chmod 400 dockertest.pem'
                 sh 'ssh -i "dockertest.pem" ubuntu@ec2-3-111-150-61.ap-south-1.compute.amazonaws.com'
                 sh 'cd /var/lib/jenkins/workspace/nodejs'
