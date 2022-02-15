@@ -23,13 +23,17 @@ pipeline {
                 echo $status
                 if (($index=="index"))
                 then
+                    echo "1"
                     if (($status = "online"))
                     then
+                    echo "2"
                         pm2 restart index
                     else
+                    echo "3"
                         pm2 restart index
                     fi
                 else
+                    echo "4"
                     pm2 start index.js
                 fi
                 ''' 
