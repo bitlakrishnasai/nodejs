@@ -15,7 +15,7 @@ pipeline {
         stage('Deployment') {
             steps {
                 sh 'pm2 start index.js'
-                echo 'Deployment ssuccessful'
+                echo 'Deployment successful'
                 
             }
         }
