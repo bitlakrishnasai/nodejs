@@ -19,7 +19,8 @@ pipeline {
                 
                 index = pm2 list | grep index | awk '{print $4}'
                 status = pm2 list | grep index | awk '{print $18}'
-                
+                echo $index
+                echo $status
                 if (($index=="index"))
                 then
                     if (($status = "online"))
