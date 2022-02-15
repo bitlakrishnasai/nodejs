@@ -33,7 +33,7 @@ pipeline {
                             pm2 restart index
                         fi
                     fi
-                if (( $index=="list"))
+                if (( $index!="list"))
                 then
                     echo "4"
                     pm2 start index.js
