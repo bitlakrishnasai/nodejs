@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh 'cd /home/ubuntu/.ssh'
+                sh '/var/lib/jenkins'
                 sh 'ssh -i "dockertest.pem" ubuntu@ec2-3-111-150-61.ap-south-1.compute.amazonaws.com'
                 sh 'cd /var/lib/jenkins/workspace/nodejs'
                 sh 'pm2 start index.js'
