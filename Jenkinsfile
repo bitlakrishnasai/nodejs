@@ -26,7 +26,7 @@ pipeline {
                     then
                         pm2 restart index
                     else
-                        pm2 start index
+                        pm2 restart index
                     fi
                 else
                     pm2 start index.js
