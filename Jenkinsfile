@@ -21,19 +21,20 @@ pipeline {
                 status=$(pm2 list | grep index | awk '{print $18}')
                 echo $index
                 echo $status
-                if (( "$index"=="index"))
-                then
+
+                if(("$index"=="index")) ;then
                     echo "1"
-                    if (($status=="online"));then
+
+                    if(($status=="online"));then
                         echo "2"
                         pm2 restart index
+
                         if(($status= "stopped"));then
-                        
                             echo "3"
                             pm2 restart index
                         fi
                     fi
-                if (( $index!="list"))
+                if (( $index!="index"))
                 then
                     echo "4"
                     pm2 start index.js
