@@ -34,11 +34,10 @@ pipeline {
                             pm2 restart index
                         fi
                     fi
-                if (( $index!="index"))
-                then
-                    echo "4"
-                    pm2 start index.js
-                    fi
+                    if (( $index!="index"));then
+                        echo "4"
+                        pm2 start index.js
+                fi
                 fi
                 ''' 
                 echo 'Deployment test successful'
