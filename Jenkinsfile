@@ -24,7 +24,7 @@ pipeline {
                 then
                     if (($status = "online"))
                     then
-                        echo 'done'
+                        pm2 restart index
                     else
                         pm2 start index
                     fi
