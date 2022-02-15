@@ -19,6 +19,7 @@ pipeline {
                 if ((pm2 restart index.js=="true"))
                 then
                 echo 'done'
+                fi
                 ''' 
                 echo 'Deployment test successful'
             }
