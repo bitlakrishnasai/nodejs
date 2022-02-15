@@ -19,10 +19,14 @@ pipeline {
                 
                 index=$(pm2 list | grep index | awk '{print $4}')
                 status=$(pm2 list | grep index | awk '{print $18}')
+                
+                check1="index"
+                check2="2"
+
                 echo $index
                 echo $status
 
-                if [[ "$index" == *"index"* ]] ;then
+                if (( $index == $check1 )) ;then
                     echo "1"
 
                     if(($status=="online"));then
