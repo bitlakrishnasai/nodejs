@@ -29,11 +29,11 @@ pipeline {
                 if [[ "$index" == "$check1" ]] ;then
                     echo "1"
 
-                    if(($status=="online"));then
+                    if [[ "$status" == "online" ]];then
                         echo "2"
                         pm2 restart index
 
-                        if(($status= "stopped"));then
+                        if [[ "$status" == "stopped" ]];then
                             echo "3"
                             pm2 restart index
                         fi
