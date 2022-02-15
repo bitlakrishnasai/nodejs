@@ -27,11 +27,4 @@ pipeline {
         }
     }    
     
-    stages {
-        stage('Deployment') {
-            steps {
-                echo 'Deployment successful'
-            }
-        }
-    }
 }
