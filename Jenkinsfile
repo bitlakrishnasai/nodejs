@@ -14,7 +14,8 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh 'cd /var/lib/jenkins'
+                sh 'cd /var/lib/jenkins' 
+                sh 'ls'
                 sh 'chmod 400 dockertest.pem'
                 sh 'ssh -i "dockertest.pem" ubuntu@ec2-3-111-150-61.ap-south-1.compute.amazonaws.com'
                 sh 'cd /var/lib/jenkins/workspace/nodejs'
