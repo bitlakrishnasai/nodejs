@@ -26,11 +26,11 @@ pipeline {
                     echo "1"
                     if (($status = "online"))
                     then
-                    echo "2"
+                        echo "2"
                         pm2 restart index
-                    else
-                    echo "3"
-                        pm2 restart index
+                        if(($status= "stopped"))
+                            echo "3"
+                            pm2 restart index
                     fi
                 else
                     echo "4"
