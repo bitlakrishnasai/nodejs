@@ -31,7 +31,7 @@ pipeline {
                     else
                     echo "3"
                         pm2 restart index
-                    
+                    fi
                 else
                     echo "4"
                     pm2 start index.js
