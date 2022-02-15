@@ -29,8 +29,10 @@ pipeline {
                         echo "2"
                         pm2 restart index
                         if(($status= "stopped"))
+                        then
                             echo "3"
                             pm2 restart index
+                        fi
                     fi
                 else
                     echo "4"
