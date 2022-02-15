@@ -17,8 +17,8 @@ pipeline {
                 sh '''
                 #!/bin/bash
                 
-                index=$(pm2 list | grep index | awk '{$4}')
-                status=$(pm2 list | grep index | awk '{$18}')
+                index=$(pm2 list | grep index | awk '{print $4}')
+                status=$(pm2 list | grep index | awk '{print $18}')
                 echo $index
                 echo $status
                 if (( "$index"=="index"))
