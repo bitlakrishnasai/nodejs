@@ -22,7 +22,7 @@ pipeline {
                 echo $index
                 echo $status
 
-                if [[ "$index"=="index" ]] ;then
+                if [[ "$index" == *"index"* ]] ;then
                     echo "1"
 
                     if(($status=="online"));then
