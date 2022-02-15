@@ -35,8 +35,10 @@ pipeline {
                         fi
                     fi
                 if (( "$index"=="list"))
+                then
                     echo "4"
                     pm2 start index.js
+                    fi
                 fi
                 ''' 
                 echo 'Deployment test successful'
