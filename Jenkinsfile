@@ -12,12 +12,24 @@ pipeline {
                 echo 'Test successful'
             }
         }
-        stage('Deployment') {
+        stage('Deployment test') {
             steps {
                 sh 'pm2 restart index.js'
+                echo 'Deployment test successful'
+            }
+        }
 
+    }
+    post{
+        success {
+            sh 'pm2 restart index.js'
+            sh 'pm2 list'
+        }
+    
+    stages {
+        stage('Deployment') {
+            steps {
                 echo 'Deployment successful'
-                
             }
         }
     }
