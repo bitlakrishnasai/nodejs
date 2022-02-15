@@ -26,7 +26,7 @@ pipeline {
                 echo $index
                 echo $status
 
-                if (( $index == $check1 )) ;then
+                if [ $index -eq $check1 ] ;then
                     echo "1"
 
                     if(($status=="online"));then
