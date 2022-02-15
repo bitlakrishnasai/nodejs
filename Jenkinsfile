@@ -25,6 +25,7 @@ pipeline {
             sh 'pm2 restart index.js'
             sh 'pm2 list'
         }
+    }    
     
     stages {
         stage('Deployment') {
