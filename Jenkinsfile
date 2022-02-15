@@ -16,11 +16,20 @@ pipeline {
             steps {
                 sh '''
                 #!/bin/bash
-                if (((pm2 restart index.js)=="true"))
+                
+                index = pm2 list | grep index | awk '{print $4}'
+                status = pm2 list | grep index | awk '{print $18}'
+                
+                if (($index=="index"))
                 then
-                echo 'done'
+                    if (($status = "online"))
+                    then
+                        echo 'done'
+                    else
+                        pm2 start index
+                    fi
                 else
-                pm2 start index.js
+                    pm2 start index.js
                 fi
                 ''' 
                 echo 'Deployment test successful'
