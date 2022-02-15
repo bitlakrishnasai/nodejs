@@ -14,8 +14,7 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh 'sudo login ubuntu;ubuntu;pm2 start index.js'
-                sh 'pm2 start index.js'
+                sh 'BUILD_ID=dontKillMe pm2 start index.js'
                 echo 'Deployment successful'
                 
             }
