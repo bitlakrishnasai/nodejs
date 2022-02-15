@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deployment test') {
             steps {
-                sh 'pm2 restart index.js'
+                sh 'pm2 start index.js'
                 echo 'Deployment test successful'
             }
         }
